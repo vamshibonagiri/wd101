@@ -31,14 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const currentDate = new Date();
         const birthDate = new Date(dob);
         const age = currentDate.getFullYear() - birthDate.getFullYear();
-        const monthDiff = currentDate.getMonth() - birthDate.getMonth();
 
-        // Check if the birthdate has occurred this year or not
-        if (monthDiff < 0 || (monthDiff === 0 && currentDate.getDate() < birthDate.getDate())) {
-            return age - 1 >= 18 && age - 1 <= 55;
-        } else {
-            return age >= 18 && age <= 55;
-        }
+        // Check if the user is between 18 and 55 years old
+        return age >= 18 && age <= 55;
     }
 
     function saveUserData(name, email, password, dob, acceptedTerms) {
