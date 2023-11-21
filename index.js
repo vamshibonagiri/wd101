@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        // Check if the email is valid
+        if (!isValidEmail(email)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
         // Save data to localStorage
         saveUserData(name, email, password, dob, acceptedTerms);
 
@@ -34,6 +40,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Check if the user is between 18 and 55 years old
         return age >= 18 && age <= 55;
+    }
+
+    function isValidEmail(email) {
+        // Use a simple email validation regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
     }
 
     function saveUserData(name, email, password, dob, acceptedTerms) {
