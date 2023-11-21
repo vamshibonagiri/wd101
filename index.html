@@ -4,68 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        form {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        button {
-            background-color: #4caf50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <center><h1>Registration page</h1></center>
@@ -74,7 +13,7 @@
         <input type="text" id="name" placeholder="Enter Full Name" name="name" required>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" placeholder="Enter Email"    name="email" required>
+        <input type="email" id="email" placeholder="Enter Email" name="email" required>
 
         <label for="password">Password:</label>
         <input type="password" id="password" placeholder="Enter password" name="password" required>
@@ -82,7 +21,7 @@
         <label for="dob">Date of Birth:</label>
         <input type="date" id="dob" name="dob" required>
 
-        <center><input type="checkbox" name="acceptedTerms" required><label for="acceptedTerms">Accept Terms & Conditions:</label></center>
+        <center><input type="checkbox" id="acceptedTerms" name="acceptedTerms" required><label for="acceptedTerms">Accept Terms & Conditions:</label></center>
         <center><button type="submit">Register</button></center>
     </form>
     <big><b><center>Entries</center></b></big>
@@ -100,27 +39,6 @@
             <!-- This tbody section is initially empty and will be populated with user data after submission -->
         </tbody>
     </table>
-
-    <script>
-        document.getElementById('registrationForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const dob = document.getElementById('dob').value;
-            const acceptedTerms = document.getElementById('acceptedTerms').checked;
-            const newRow = document.createElement('tr');
-            newRow.innerHTML = `
-                <td>${name}</td>
-                <td>${email}</td>
-                <td>${password}</td>
-                <td>${dob}</td>
-                <td>${acceptedTerms ? 'Yes' : 'No'}</td>
-            `;
-            document.getElementById('userData').getElementsByTagName('tbody')[0].appendChild(newRow);
-            document.getElementById('registrationForm').reset();
-        });
-    </script>
-
+    <script src="index.js"></script>
 </body>
 </html>
