@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Save data to localStorage
         saveUserData(name, email, password, dob, acceptedTerms);
 
-        // Display data in the table
+        // Display data in the table immediately
         displayUserData();
 
         // Clear the form inputs
