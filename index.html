@@ -1,44 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Page</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <center><h1>Registration page</h1></center>
-    <form id="registrationForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" placeholder="Enter Full Name" name="name" required>
+<style>
+  * {
+    margin: 0;
+    padding: 02;
+    box-sizing: border-box;
+    font-family: "Times New Roman", Times, serif;
+  }
+  body {
+    background-color:rgba(195, 220, 235, 0.884);
+  }
+  .head {
+    margin-top: 2rem;
+    /* color: white; */
+  }
+  .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 400px;
+    box-shadow: 2px 2px 4px rgba(119, 219, 110, 0.1);
+    padding: 50px;
+  }
+  .input {
+    padding: 10px 15px;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    font-size: 18px;
+    outline: none;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.02);
+  }
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" placeholder="Enter Email" name="email" required>
+  border{
+    border-radius: 20px;
+    border: 1px solid #ccc;
+  }  
+  label {
+    font-size: 18px;
+    letter-spacing: 1.4px;
+  }
+  .tableForm {
+    margin-top: 10px;
+  }
+  .btn {
+    background-color: rgba(0, 0, 0, 0.338);
+    color: rgba(223, 197, 197, 0.352);
+    padding: 10px 20px;
+    font-size: large;
+    font-weight: 600;
+    border-radius: 10px;
+  }
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" placeholder="Enter password" name="password" required>
+  input:invalid:focus {
+    border: 2px solid red;
+  }
 
-        <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob" required>
+  .table {
+    border: 2px solid black;
+    margin: 40px auto;
+  }
 
-        <center><input type="checkbox" id="acceptedTerms" name="acceptedTerms" required><label for="acceptedTerms">Accept Terms & Conditions:</label></center>
-        <center><button type="submit">Register</button></center>
-    </form>
-    <big><b><center>Entries</center></b></big>
-    <table id="userData">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>Dob</th>
-                <th>Accepted terms?</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- This tbody section is initially empty and will be populated with user data after submission -->
-        </tbody>
-    </table>
-    <script src="index.js"></script>
+  .td,
+  .th {
+    padding: 10px;
+    text-align: center;
+  }
+  form div input {
+width: auto;
+height: 40px;
+border-radius: 8px;
+outline: none;
+border: 2px solid #c4c4c4;
+padding: 0 30px;
+box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+form div i {
+position: absolute;
+padding: 10px;
+margin-bottom: 15px;
+}
+  .subHead {
+    text-align: center;
+    margin-top: 2rem;
+  }
+@media (max-width: 425px) {
+form {
+padding: 20px;
+}
+}
+</style>
+
+<body style="text-align: center">  
+    <form id="user-form" method="post">
+    <div style="
+        border-radius: 50px;
+        border: 10px solid transparent;
+        margin-left: 450px;
+        margin-right: 450px;
+        background: linear-gradient(45deg,rgb(170, 161, 161),rgb(245, 173, 229)) border-box">
+      <h1 style="text-decoration: underline; color: beige;"/>Details of Candidate</h1>
+
+      <li ><label for="text">Name: </label>
+      <input required type="text" id="name" name="name"></li>
+      <p></p>
+        <li><label for="email">Email: </label>
+      <input required type="email" id="email" name="email" ></li>
+      <p></p>
+        <li><label required for="password">Password: </label>
+      <input required type="password" id="password" name="password" ></li>
+      <p></p>
+        <li><label for="dob">Date of Birth: </label>
+      <input type="date" id="dob" name="dob"></li>
+      <p></p>
+      <label for="acceptTerms">Accepted Terms & Conditions </label>
+      <input type="checkbox" name="acceptTerms" id="acceptTerms" >
+      <p></p>
+      <button required class="button" type="submit" style="--x: 50%;
+      --y: 50%;
+      position: relative;
+      appearance: none;
+      padding: 1em 2em;
+      color: rgb(183, 241, 47);
+      cursor: pointer;
+      outline: none;
+      border-radius: 100px;
+  
+      border: 2px solid transparent;
+      background: linear-gradient(rgb(187, 12, 12), rgb(241, 245, 241)) padding-box, radial-gradient(farthest-corner at var(--x) var(--y), #00C9A7, #845EC2) border-box;
+  ">submit</button>
+      <p></p>
+    </div>
+  </form>
+  <div class="relative bg-white px-4 mt-5 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:rounded-lg sm:px-10 ">
+    <div class="mx-auto">
+        <h2 class="text-xl text-center font-bold leadin-right">Entries</h2>
+        <div class="divide-y divide-gray-300/50" id="user-entries"></div>
+    </div>
+</div>
+  <script src="index.js"></script>
 </body>
 </html>
